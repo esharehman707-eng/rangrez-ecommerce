@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply font-sans bg-pink-50 text-neutral-900 antialiased; }
+  ::selection { @apply bg-pink-500 text-white; }
+}
+
+@layer components {
+  .btn { @apply inline-block text-center px-6 py-3 rounded-full font-semibold transition duration-300 disabled:opacity-40 disabled:cursor-not-allowed; }
+  .btn-pink { @apply btn bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-lg shadow-pink-500/30 hover:shadow-pink-500/50 hover:-translate-y-0.5; }
+  .btn-dark { @apply btn bg-black text-white hover:bg-neutral-800 hover:-translate-y-0.5; }
+  .btn-out { @apply btn border border-neutral-300 hover:border-pink-500 hover:text-pink-600; }
+  .input { @apply w-full border border-neutral-300 rounded-xl px-4 py-2.5 bg-white transition focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400; }
+  .text-outline { -webkit-text-stroke: 1.5px #ec4899; color: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
